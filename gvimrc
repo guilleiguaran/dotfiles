@@ -1,1 +1,2 @@
-/Users/guille/.gvimrc.local
+color vwilight
+set guifont=monaco:h12
