@@ -1,12 +1,12 @@
 [user]
 	name = Guillermo Iguaran
-	email = guilleiguaran@gmail.com
+	email = youremail@gmail.com
 [alias]
-  co = checkout
+	co = checkout
 [color]
-  diff = auto
-  status = auto
-  branch = auto
+	diff = auto
+	status = auto
+	branch = auto
 [github]
 	user = guilleiguaran
 	token = GITHUB_API_TOKEN
