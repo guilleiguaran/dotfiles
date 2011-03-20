@@ -4,9 +4,6 @@ set ignorecase
 " Set temporary directory (don't litter local dir with swp/tmp files)
 set directory=/tmp/
 
-" Let the <leader> key be '
-let mapleader = "'"
-
 " Make # surrounds actually make a ruby string interpolation
 let g:surround_35 = "#{\r}"
 
