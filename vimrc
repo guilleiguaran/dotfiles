@@ -1,14 +1,18 @@
 " Case insensitive search
 set ignorecase
 
+set showcmd
+
 " Set temporary directory (don't litter local dir with swp/tmp files)
 set directory=/tmp/
 
 " Make # surrounds actually make a ruby string interpolation
 let g:surround_35 = "#{\r}"
 
-" Color Setttings
+" Color Settings
 set t_Co=256
+"set background=dark
+"colorscheme solarized
 colorscheme vividchalk
 
 " Open the Ruby ApiDock page for the word under cursor, in a new Firefox tab
