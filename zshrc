@@ -53,8 +53,35 @@ git_prompt() {
 }
 export PROMPT='%~%{$fg[green]%}$(git_prompt)%{$reset_color%} %% '
 
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+# Default PATH value
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 
+# Add rbenv to PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# Add npm to PATH
+export PATH="/usr/local/share/npm/bin:$PATH"
+
+# GC tunning
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_GC_HEAP_FREE_SLOTS=600000
+export RUBY_GC_HEAP_INIT_SLOTS=800000
+
+# Set LANG and LC_ALL to UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# Set Android home folder
+export ANDROID_HOME="/Users/guille/code/android-sdk-macosx"
+
+# Android Tools and Platform Tools
+export PATH="$HOME/code/android-sdk-macosx/platform-tools:$PATH"
+export PATH="$HOME/code/android-sdk-macosx/tools:$PATH"
+
+# Elixir and Rebar
+export PATH="$HOME/code/elixir/bin:$PATH"
+export PATH="$HOME/code/rebar:$PATH"
+
+# Set default Java version
+# export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home"
