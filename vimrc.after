@@ -8,4 +8,7 @@ set directory=/tmp/
 
 " Color Settings
 set t_Co=256
-colorscheme vividchalk
+colorscheme solarized
+
+" LaTeX-Box is incompatible with vim-latex
+let g:polyglot_disabled = ['latex']

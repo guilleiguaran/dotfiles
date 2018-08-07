@@ -1,39 +1,93 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/guillermo-iguaran/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Set to this to use case-sensitive completion
+# Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Comment this out to disable weekly auto-update checks
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
-# Uncomment following line if you want to disable colors in ls
+# Uncomment the following line to change how often to auto-update (in days).
+export UPDATE_ZSH_DAYS=15
+
+# Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
-# Uncomment following line if you want to disable autosetting terminal title.
+# Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-PROJECTS_DIR="/Users/guille/code"
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+# Add p command to change to Projects dir
+
+PROJECTS_DIR="$HOME/src"
 p() {
   PROJECT_NAME="$1";
   cd "$PROJECTS_DIR/$PROJECT_NAME";
@@ -45,6 +99,9 @@ _projects_list() {
 
 compctl -K _projects_list p
 
+
+# Prompt with Git info
+
 git_prompt() {
   ref=$(git symbolic-ref HEAD 2> /dev/null | cut -d'/' -f3) || return
   if test -n "$ref"; then
@@ -53,17 +110,12 @@ git_prompt() {
 }
 export PROMPT='%~%{$fg[green]%}$(git_prompt)%{$reset_color%} %% '
 
-# Default PATH value
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 
-# Add rbenv to PATH
-export PATH="$HOME/.rbenv/bin:$PATH"
+# Configuration for rbenv and nodenv
 eval "$(rbenv init -)"
+eval "$(nodenv init -)"
 
-# Add npm to PATH
-export PATH="/usr/local/share/npm/bin:$PATH"
-
-# GC tunning
+# Ruby GC tunning
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_GC_HEAP_FREE_SLOTS=600000
 export RUBY_GC_HEAP_INIT_SLOTS=800000
@@ -71,17 +123,5 @@ export RUBY_GC_HEAP_INIT_SLOTS=800000
 # Set LANG and LC_ALL to UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-
-# Set Android home folder
-export ANDROID_HOME="/Users/guille/code/android-sdk-macosx"
-
-# Android Tools and Platform Tools
-export PATH="$HOME/code/android-sdk-macosx/platform-tools:$PATH"
-export PATH="$HOME/code/android-sdk-macosx/tools:$PATH"
-
-# Elixir and Rebar
-export PATH="$HOME/code/elixir/bin:$PATH"
-export PATH="$HOME/code/rebar:$PATH"
-
-# Set default Java version
-# export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home"
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
