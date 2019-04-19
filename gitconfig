@@ -8,5 +8,7 @@
 [github]
   user = guilleiguaran
 [core]
-	editor = vim
-	excludesfile = /Users/guillermo-iguaran/.gitignore
+  editor = nvim
+  excludesfile = ~/.gitignore
+[credential]
+  helper = osxkeychain
