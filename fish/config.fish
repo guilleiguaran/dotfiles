@@ -6,6 +6,7 @@ set --universal fish_user_paths $fish_user_paths ~/.rbenv/shims
 set -Ux EDITOR nvim
 set -gx  LC_ALL en_US.UTF-8
 set -gx  LANG en_US.UTF-8
+set -x PKG_CONFIG_PATH '/usr/local/lib/pkgconfig:/usr/local/opt/openssl/lib/pkgconfig:'
 
 # aliases
 abbr gst 'git status'
