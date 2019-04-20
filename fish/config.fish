@@ -10,5 +10,5 @@ set -gx  LANG en_US.UTF-8
 # aliases
 abbr gst 'git status'
 abbr b 'byobu'
-function vim; nvim $argv; end
-function mvim; gnvim -- $argv; end
+function vim; _vim_helper nvim $argv ; end
+function mvim; _vim_helper gnvim $argv; end
