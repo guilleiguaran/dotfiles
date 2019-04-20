@@ -11,7 +11,7 @@ set -gx  LANG en_US.UTF-8
 abbr gst 'git status'
 abbr b 'byobu'
 function vim; nvim $argv; end
-function mvim; oni $argv; end
+function mvim; gnvim -- $argv; end
 
 # Function to move to project folder
 function p
