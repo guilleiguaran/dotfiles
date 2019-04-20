@@ -8,9 +8,8 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
-
+" Use rubyfmt instead of default rubocop
 "let g:formatdef_rubyfmt = '"rubyfmt.rb"'
 "let g:formatters_ruby = ['rubyfmt']
 noremap f :Autoformat<CR>
 let g:deoplete#enable_at_startup = 0
-"let g:formatterpath = ['/usr/local/bin/rubyfmt.rb']
