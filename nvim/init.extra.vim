@@ -12,4 +12,6 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 "let g:formatdef_rubyfmt = '"rubyfmt.rb"'
 "let g:formatters_ruby = ['rubyfmt']
 noremap f :Autoformat<CR>
-let g:deoplete#enable_at_startup = 0
+
+let g:deoplete#enable_at_startup = 1
+set completeopt-=preview
