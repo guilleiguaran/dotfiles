@@ -11,5 +11,6 @@ set -x PKG_CONFIG_PATH '/usr/local/lib/pkgconfig:/usr/local/opt/openssl/lib/pkgc
 # aliases
 abbr gst 'git status'
 abbr b 'byobu'
-function vim; _vim_helper nvim $argv ; end
+function vim; _vim_helper nvim $argv; end
 function mvim; _vim_helper gnvim $argv; end
+function ccat; highlight -s molokai $argv; end
