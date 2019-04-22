@@ -7,3 +7,4 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+Plug 'ctrlpvim/ctrlp.vim'
